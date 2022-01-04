@@ -1,0 +1,12 @@
+image: golang:1.12.6
+
+stages:
+ - build
+
+before_script:
+ - apt update && apt install ca-certificates libgnutls30 -y
+
+build:
+    stage: build
+    script:
+    - go build -o build/tak-server-manager
