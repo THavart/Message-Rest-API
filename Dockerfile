@@ -27,11 +27,6 @@ EXPOSE 27017
 EXPOSE 28017
 EXPOSE 10000
 
-# Start script
-# This handles env variables and starts the service
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 COPY main /data/main
 
 ENTRYPOINT ["/bin/bash", "-l", "-c", "/data/main"]
